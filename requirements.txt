@@ -3,3 +3,8 @@ langchain
 langchain-community
 mysqlclient
 python-dotenv
+wikipedia
+langchain-aws
+google-api-python-client
+langchain-google-community
+langchainhub

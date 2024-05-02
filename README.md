@@ -81,3 +81,8 @@ LangChainDeprecationWarning: The class `BedrockChat` was deprecated in LangChain
 ```
 LangChainDeprecationWarning: The method `Chain.__call__` was deprecated in langchain 0.1.0 and will be removed in 0.2.0. Use invoke instead.
 ```
+
+## poetry入れてみた
+`poetry run which python`を実行すると`.venv/bin/python`を指し示す
+
+`poetry add $( cat requirements.txt )`でやってみたけど、長くなりすぎてダメな気がする

@@ -86,3 +86,6 @@ LangChainDeprecationWarning: The method `Chain.__call__` was deprecated in langc
 `poetry run which python`を実行すると`.venv/bin/python`を指し示す
 
 `poetry add $( cat requirements.txt )`でやってみたけど、長くなりすぎてダメな気がする
+
+## alembic
+`alembic init alembic`

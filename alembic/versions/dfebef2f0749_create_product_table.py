@@ -1,7 +1,7 @@
 """create product table
 
 Revision ID: dfebef2f0749
-Revises: 
+Revises:
 Create Date: 2024-05-03 08:52:08.890774
 
 """
@@ -19,8 +19,13 @@ depends_on: Union[str, Sequence[str], None] = None
 
 
 def upgrade() -> None:
-    pass
+    op.create_table(
+        'products',
+        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('name', sa.String(50), nullable=False),
+        sa.Column('description', sa.Unicode(200)),
+    )
 
 
 def downgrade() -> None:
-    pass
+    op.drop_table('products')

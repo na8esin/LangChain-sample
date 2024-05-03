@@ -90,5 +90,9 @@ LangChainDeprecationWarning: The method `Chain.__call__` was deprecated in langc
 ## alembic
 `alembic init alembic`
 
+`alembic upgrade head`
+
+`alembic upgrade head --sql > migration.sql`
+
 ### Create a Migration Script
 `alembic revision -m "create product table"`

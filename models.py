@@ -6,7 +6,7 @@ class Products(SQLModel, table=True):
     name: str
     description: str | None = None
 
-
+# SQLModelのチュートリアルのコードをコピペ
 class Hero(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
     name: str

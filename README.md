@@ -96,3 +96,55 @@ LangChainDeprecationWarning: The method `Chain.__call__` was deprecated in langc
 
 ### Create a Migration Script
 `alembic revision -m "create product table"`
+
+## テストデータを入れる
+- モデルを作る
+  - omymodelsで生成してコミットしてみる
+  - models.pyは別で作成したものをコピペ
+  - 上記の２つを比べてみる
+
+```
+(.venv) langchain$ poetry add omymodels
+Using version ^0.17.0 for omymodels
+
+Updating dependencies
+Resolving dependencies... (0.1s)
+
+Because no versions of omymodels match >0.17.0,<0.18.0
+ and omymodels (0.17.0) depends on pydantic (>=1.8.2,<2.0.0), omymodels (>=0.17.0,<0.18.0) requires pydantic (>=1.8.2,<2.0.0).
+So, because langchain-samples depends on both pydantic (2.7.0) and omymodels (^0.17.0), version solving failed.
+```
+
+pyproject.tomlから削除
+```
+pydantic = "2.7.0"
+pydantic-core = "2.18.1"
+```
+
+今度は成功
+```
+$ poetry add omymodels
+Using version ^0.17.0 for omymodels
+
+Updating dependencies
+Resolving dependencies... (1.3s)
+
+Package operations: 8 installs, 1 update, 1 removal
+
+  - Removing pydantic-core (2.18.1)
+  - Downgrading pydantic (2.7.0 -> 1.10.15)
+  - Installing regex (2024.5.10)
+  - Installing parsimonious (0.10.0)
+  - Installing ply (3.11)
+  - Installing jinja2 (3.1.4)
+  - Installing py-models-parser (0.7.0)
+  - Installing simple-ddl-parser (1.3.0)
+  - Installing table-meta (0.1.5)
+  - Installing omymodels (0.17.0)
+```
+
+ddlをdumpして、omymodelsで生成
+ddlは`alembic upgrade head --sql > migration.sql`で出てくるけど、
+別で追加したテーブルが反映されてないので、
+`alembic revision --autogenerate -m "create helo table"`
+をする必要があると。

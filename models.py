@@ -1,14 +1,9 @@
-from sqlmodel import Field, SQLModel
+from typing import Optional
+from pydantic import BaseModel
 
-# omymodelsで生成して、ちょっと修正
-class Products(SQLModel, table=True):
-    id: int = Field(primary_key=True)
-    name: str
-    description: str | None = None
 
-# SQLModelのチュートリアルのコードをコピペ
-class Hero(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
+class Products(BaseModel):
+
+    id: int
     name: str
-    secret_name: str
-    age: int | None = None
+    description: Optional[str]

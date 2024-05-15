@@ -4,7 +4,7 @@ from langchain_community.utilities import SQLDatabase
 from langchain_aws import ChatBedrock
 from dotenv import load_dotenv
 
-from utils import mysql_uri
+from app.utils import mysql_uri
 
 load_dotenv()
 

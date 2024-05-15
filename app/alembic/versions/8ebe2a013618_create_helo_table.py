@@ -1,18 +1,19 @@
 """create helo table
 
-Revision ID: 2fdcb9e65591
+Revision ID: 8ebe2a013618
 Revises: dfebef2f0749
-Create Date: 2024-05-14 10:37:52.590211
+Create Date: 2024-05-15 12:11:45.580130
 
 """
 from typing import Sequence, Union
 
 from alembic import op
 import sqlalchemy as sa
+import sqlmodel
 from sqlalchemy.dialects import mysql
 
 # revision identifiers, used by Alembic.
-revision: str = '2fdcb9e65591'
+revision: str = '8ebe2a013618'
 down_revision: Union[str, None] = 'dfebef2f0749'
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None

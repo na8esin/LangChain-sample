@@ -148,3 +148,5 @@ ddlは`alembic upgrade head --sql > migration.sql`で出てくるけど、
 別で追加したテーブルが反映されてないので、
 `alembic revision --autogenerate -m "create helo table"`
 をする必要があると。
+
+なんやかんやあって、データは投入できた

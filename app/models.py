@@ -1,10 +1,16 @@
 from sqlmodel import Field, SQLModel
 
-# omymodelsで生成して、ちょっと修正
-class Products(SQLModel, table=True):
-    id: int = Field(primary_key=True)
+
+class Product(SQLModel, table=True):
+    __tablename__ = "products"
+
+    # idはpython上は、Noneにできるけど、DDL上はちゃんと↓のようになってる
+    # `id` int NOT NULL AUTO_INCREMENT
+    # https://sqlmodel.tiangolo.com/tutorial/insert/#whats-next
+    id: int | None = Field(default=None, primary_key=True)
     name: str
     description: str | None = None
+
 
 # SQLModelのチュートリアルのコードをコピペ
 class Hero(SQLModel, table=True):

@@ -96,6 +96,7 @@ LangChainDeprecationWarning: The method `Chain.__call__` was deprecated in langc
 
 ### Create a Migration Script
 `alembic revision -m "create product table"`
+`alembic revision --autogenerate -m "add price on products table"`
 
 ## テストデータを入れる
 - モデルを作る

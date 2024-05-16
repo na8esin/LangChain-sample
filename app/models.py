@@ -1,3 +1,4 @@
+from decimal import Decimal
 from sqlmodel import Field, SQLModel
 
 
@@ -9,6 +10,7 @@ class Product(SQLModel, table=True):
     # https://sqlmodel.tiangolo.com/tutorial/insert/#whats-next
     id: int | None = Field(default=None, primary_key=True)
     name: str
+    price: Decimal = Field(default=0, max_digits=5, decimal_places=2)
     description: str | None = None
 
 

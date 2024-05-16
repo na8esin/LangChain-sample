@@ -23,7 +23,7 @@ agent_executor = create_sql_agent(
 )
 
 response = agent_executor.invoke(
-    {"input": "productsの件数は? 説明文は不要です。"}
+    {"input": "商品の件数は? 説明文は不要です。"}
 )
 print("-----------------------------")
 print(response)
